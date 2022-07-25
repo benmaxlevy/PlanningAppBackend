@@ -18,13 +18,13 @@ be called having requests' `x-access-token` *header* being set to the encoded JW
 ##### Return
 ###### Success
 This request returns a ***signed*** JWT that shall be stored on the client-side (e.g., local storage or a cookie) and an HTTP **200** code.
-> Body: {
-> token: String
+> Body: {  
+> token: String  
 > }
 ###### Failure
 This returns a failure message and an HTTP **401** code.
-> Body: {
-> message: String
+> Body: {  
+> message: String  
 > }
 
 *Note: While there are potential security concerns, these are easily mitigated by having a JSON Web Signature (JWS), in which a 
@@ -42,4 +42,7 @@ an HTTP 401 error.*
 > email: String  
 > }
 #### Return
-
+##### Success
+This request returns an HTTP 200 code.
+##### Failure
+This returns a failure message and an HTTP 500 code.

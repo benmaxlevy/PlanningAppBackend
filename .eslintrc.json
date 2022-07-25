@@ -2,6 +2,8 @@
   "extends": ["plugin:prettier/recommended", "airbnb-base"],
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "quotes": [2, "double", "avoid-escape"],
+    "indent": ["error", 4]
   }
 }
