@@ -1,6 +1,6 @@
 .husky/
 .env
-
+.idea/
 # Logs
 logs
 *.log
