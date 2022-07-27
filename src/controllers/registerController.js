@@ -6,18 +6,20 @@ const { returnId: successId } = require("../lib/successMessages");
 const { sequelize } = require("../models/index");
 
 exports.register = async (req, res) => {
+    // hash pass
     const password = crypto
         .createHash("sha256")
         .update(req.body.password)
         .digest("base64");
     try {
+        // make user obj using the sequelize instance within the index model
         const user = User(sequelize, DataTypes);
+        // attempt to create (and, intrinsically, save) a new user
         const newUser = await user.create({
             username: req.body.username,
             password,
             email: req.body.email,
         });
-        await newUser.save();
         res.status(200);
         return res.json(successId(newUser.id));
     } catch (error) {
