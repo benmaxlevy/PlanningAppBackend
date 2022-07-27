@@ -4,6 +4,9 @@
   "rules": {
     "prettier/prettier": "error",
     "quotes": [2, "double", "avoid-escape"],
-    "indent": ["error", 4]
+    "indent": ["error", 4],
+    "implicit-arrow-linebreak": "off",
+    "no-unused-vars": "off",
+    "comma-dangle": "off"
   }
 }

@@ -43,6 +43,6 @@ an HTTP 401 error.*
 > }
 #### Return
 ##### Success
-This request returns an HTTP 200 code.
+This request returns an HTTP 200 code and a success message.
 ##### Failure
-This returns a failure message and an HTTP 500 code.
+This returns a failure message and an HTTP 500 code. If this is encountered, it is likely a user's potential username is ***not*** unique (it must be).
