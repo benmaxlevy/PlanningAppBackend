@@ -5,7 +5,7 @@ const { generic: genericError } = require("../lib/errorMessages");
 const { returnId: successId } = require("../lib/successMessages");
 const { sequelize } = require("../models/index");
 
-exports.register = async (req, res) => {
+exports.register = async (req, res, next) => {
     // hash pass
     const password = crypto
         .createHash("sha256")
@@ -22,8 +22,7 @@ exports.register = async (req, res) => {
         });
         res.status(200);
         return res.json(successId(newUser.id));
-    } catch (error) {
-        res.status(500);
-        return res.json(genericError);
+    } catch (e) {
+        return next(e);
     }
 };

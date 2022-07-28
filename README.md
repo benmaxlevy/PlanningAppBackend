@@ -19,8 +19,10 @@ be called having requests' `x-access-token` *header* being set to the encoded JW
 ###### Success
 This request returns a ***signed*** JWT that shall be stored on the client-side (e.g., local storage or a cookie) and an HTTP **200** code.
 > Body: {  
-> token: String  
+> message: String
+> id: String  
 > }
+*Note: id is the JSON Web Token*
 ###### Failure
 This returns a failure message and an HTTP **401** code.
 > Body: {  
