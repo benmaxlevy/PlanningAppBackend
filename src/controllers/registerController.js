@@ -18,7 +18,7 @@ exports.register = async (req, res, next) => {
         const newUser = await user.create({
             username: req.body.username,
             password,
-            email: req.body.email,
+            email: req.body.email
         });
         res.status(200);
         return res.json(successId(newUser.id));

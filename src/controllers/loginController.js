@@ -18,7 +18,7 @@ exports.login = async (req, res, next) => {
         const loginUser = await user.findOne({
             where: {
                 username: req.body.username,
-                password,
+                password
             }
         });
         // for "EDA"
